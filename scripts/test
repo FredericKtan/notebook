@@ -1,0 +1,24 @@
+#! /usr/bin/env node
+
+const { add, dec, inc } = require('../src/helpers/math');
+
+let result;
+let expected;
+
+result = add(3, 7);
+expected = 10;
+if (result !== expected) {
+  throw new Error(`${result} is not equal to ${expected}`);
+}
+
+result = dec(10);
+expected = 9;
+if (result !== expected) {
+  throw new Error(`${result} is not equal to ${expected}`);
+}
+
+result = inc(10);
+expected = 11;
+if (result !== expected) {
+  throw new Error(`${result} is not equal to ${expected}`);
+}
