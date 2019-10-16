@@ -12,18 +12,31 @@ const expect = (actual) => {
   }
 };
 
+const test = (title, callback) => {
+  try {
+    callback();
+    console.log(`✓ ${title}`);
+  } catch (error) {
+    console.error(`✕ ${title}`);
+    console.error(error);
+  }
+};
+
 let result;
 let expected;
 
-result = add(3, 7);
-expected = 10;
-expect(result).toBe(expected)
-
-result = dec(10);
-expected = 9;
-expect(result).toBe(expected)
-
-
-result = inc(10);
-expected = 11;
-expect(result).toBe(expected)
+test('Add numbers', () => {
+  result = add(3, 7);
+  expected = 10;
+  expect(result).toBe(expected)  
+});
+test('Decrease the number by one', () => {
+  result = dec(10);
+  expected = 9;
+  expect(result).toBe(expected)  
+});
+test('Increase the number by one', () => {
+  result = inc(10);
+  expected = 11;
+  expect(result).toBe(expected)  
+});
