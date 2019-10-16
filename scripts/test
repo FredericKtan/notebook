@@ -2,23 +2,28 @@
 
 const { add, dec, inc } = require('../src/helpers/math');
 
+const expect = (actual) => {
+  return {
+    toBe(expected) {
+      if (actual !== expected) {
+        throw new Error(`${actual} is not equal to ${expected}`);
+      }
+    }
+  }
+};
+
 let result;
 let expected;
 
 result = add(3, 7);
 expected = 10;
-if (result !== expected) {
-  throw new Error(`${result} is not equal to ${expected}`);
-}
+expect(result).toBe(expected)
 
 result = dec(10);
 expected = 9;
-if (result !== expected) {
-  throw new Error(`${result} is not equal to ${expected}`);
-}
+expect(result).toBe(expected)
+
 
 result = inc(10);
 expected = 11;
-if (result !== expected) {
-  throw new Error(`${result} is not equal to ${expected}`);
-}
+expect(result).toBe(expected)
