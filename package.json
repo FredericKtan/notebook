@@ -15,7 +15,7 @@
     "eject": "react-scripts eject",
     "lint": "npx eslint src",
     "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|mdx|graphql|vue)\"",
-    "create:pull-request": "node"
+    "create:pull-request": "node scripts/issueIntoPullRequest"
   },
   "eslintConfig": {
     "extends": "react-app"
