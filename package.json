@@ -9,15 +9,13 @@
     "react-scripts": "3.2.0"
   },
   "scripts": {
-    "build": "react-scripts build",
-    "create:pull-request": "node scripts/issueIntoPullRequest.js",
-    "eject": "react-scripts eject",
-    "format": "npm run prettier -- --write",
-    "lint": "npx eslint src",
-    "prettier": "prettier \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|mdx|graphql|vue)\" \"scripts/**\"",
     "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "validate": "npm run lint && npm run prettier -- --list-different"
+    "eject": "react-scripts eject",
+    "lint": "npx eslint src",
+    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|mdx|graphql|vue)\" \"scripts/**\"",
+    "create:pull-request": "node scripts/issueIntoPullRequest.js"
   },
   "eslintConfig": {
     "extends": "react-app"
