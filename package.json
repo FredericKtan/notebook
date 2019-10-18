@@ -14,8 +14,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "npx eslint src",
-    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|mdx|graphql|vue)\"",
-    "create:pull-request": "node scripts/issueIntoPullRequest"
+    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|mdx|graphql|vue)\" \"scripts/**\"",
+    "create:pull-request": "node scripts/issueIntoPullRequest.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-jest": "^22.19.0",
     "eslint-plugin-react": "^7.16.0",
     "prettier": "^1.18.2"
