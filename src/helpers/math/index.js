@@ -1,7 +1,3 @@
-import { add, dec, inc } from './math';
+import { add, dec, inc } from "./math";
 
-export {
-  add,
-  dec,
-  inc,
-};
+export { add, dec, inc };
