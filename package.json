@@ -12,12 +12,13 @@
     "build": "react-scripts build",
     "create:pull-request": "node scripts/issueIntoPullRequest.js",
     "eject": "react-scripts eject",
+    "flow": "flow",
     "format": "npm run prettier -- --write",
     "lint": "npx eslint src",
     "prettier": "prettier \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|mdx|graphql|vue)\" \"scripts/**\"",
     "start": "react-scripts start",
     "test": "react-scripts test",
-    "validate": "npm run lint && npm run prettier -- --list-different"
+    "validate": "npm run lint && npm run prettier -- --list-different && npm run flow"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,10 +36,12 @@
     ]
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.3",
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-jest": "^22.19.0",
     "eslint-plugin-react": "^7.16.0",
+    "flow-bin": "^0.109.0",
     "prettier": "^1.18.2"
   }
 }
