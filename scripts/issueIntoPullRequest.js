@@ -1,5 +1,7 @@
 #! /usr/bin/env node
 
+// @flow strict
+
 const { execSync } = require("child_process");
 
 const options = { encoding: "utf-8", stdio: "pipe" };
