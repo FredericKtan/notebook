@@ -24,12 +24,14 @@ test("Increase the number by one", () => {
   expect(result).toBe(expected);
 });
 
-test("Random number should return 3", () => {
-  math.random = (max: number): number => max - 1;
+test("Generate a random number between 0 and max - 1", () => {
+  math.random = jest.fn((max: number): number => max - 1);
   const result = math.random(1000);
   const expected = 999;
 
   expect(result).toBe(expected);
+  expect(math.random).toHaveBeenCalledTimes(1);
+  expect(math.random).toHaveBeenCalledWith(1000);
 });
 
 math.random = originalRandom;
