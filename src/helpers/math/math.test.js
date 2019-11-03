@@ -1,14 +1,6 @@
 // @flow strict
 import math from "./math";
-
-jest.mock("./math", () => {
-  const original = jest.requireActual("./math");
-
-  return {
-    ...original,
-    random: jest.fn((max: number): number => max - 1)
-  };
-});
+import { random } from "./__mocks__/math";
 
 test("Add numbers", () => {
   const result = math.add(3, 7);
@@ -32,10 +24,10 @@ test("Increase the number by one", () => {
 });
 
 test("Generate a random number between 0 and max - 1", () => {
-  const result = math.random(1000);
+  const result = random(1000);
   const expected = 999;
 
   expect(result).toBe(expected);
-  expect(math.random).toHaveBeenCalledTimes(1);
-  expect(math.random).toHaveBeenCalledWith(1000);
+  expect(random).toHaveBeenCalledTimes(1);
+  expect(random).toHaveBeenCalledWith(1000);
 });
