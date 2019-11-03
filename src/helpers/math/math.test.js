@@ -1,8 +1,6 @@
 // @flow strict
 import math from "./math";
 
-const originalRandom = math.random;
-
 test("Add numbers", () => {
   const result = math.add(3, 7);
   const expected = 10;
@@ -25,13 +23,14 @@ test("Increase the number by one", () => {
 });
 
 test("Generate a random number between 0 and max - 1", () => {
-  math.random = jest.fn((max: number): number => max - 1);
+  const spy = jest.spyOn(math, "random");
+  spy.mockImplementation((max: number): number => max - 1);
   const result = math.random(1000);
   const expected = 999;
 
   expect(result).toBe(expected);
-  expect(math.random).toHaveBeenCalledTimes(1);
-  expect(math.random).toHaveBeenCalledWith(1000);
-});
+  expect(spy).toHaveBeenCalledTimes(1);
+  expect(spy).toHaveBeenCalledWith(1000);
 
-math.random = originalRandom;
+  spy.mockRestore();
+});
