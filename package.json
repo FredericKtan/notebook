@@ -24,7 +24,9 @@
     "prettier": "prettier \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|mdx|graphql|vue)\" \"scripts/**\"",
     "start": "react-scripts start",
     "test": "react-scripts test",
-    "validate": "npm run lint && npm run prettier -- --list-different && npm run flow"
+    "validate": "npm run lint && npm run prettier -- --list-different && npm run flow",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,8 +50,10 @@
     "eslint-plugin-jest": "^22.19.0",
     "eslint-plugin-react": "^7.16.0",
     "flow-bin": "^0.109.0",
+    "gh-pages": "^2.1.1",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
     "prettier": "^1.18.2"
-  }
+  },
+  "homepage": "http://fredericktan.github.io/notebook"
 }
